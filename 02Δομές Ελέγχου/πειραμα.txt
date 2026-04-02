@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="el">
+<body>
+<h2>Σύνδεση</h2>
+<input type="password" id="password" placeholder="Δώστε κωδικό(1234)">
+<button onclick="login()">Σύνδεση</button>
+
+<div id="sportSection>
+	<h3>Επιλέξτε Άθλημα</h3>
+	<select id="sportList" onchange="showSportInfo()">
+		<option value="">--Επιλέξτε--</option>
+		<option value="football">--Ποδόσφαιρο--</option>
+		<option value="basketball">--Μπάσκετ--</option>
+		<option value="tennis">--Τέννις--</option>
+	</select>
+	<p id="result"></p>
+</div>
+<script>
+function login(){
+var pass = document.getElementById("password").value;
+if(pass === "1234"){
+alert("Επιτυχής σύνδεση");
+document.getElementById("sportSection").style.display = "block";
+}else{
+alert("Λάθος κωδικός");
+document.getElementById("sportSection").style.display = "none";
+}
+}
+function showSportInfo(){
+var sport = document.getElementById("sportList").value;
+var resultText="";
+
+switch(sport){
+case "football":
+resultText="Pd;osfairo";
+break;
+case "basketball:
+resultText="Mpasket";
+break;
+case "tennis":
+resultText="tennis";
+break;
+default:
+resultText = "Παρακαλώ επιλέξτε ένα άθλημα";
+}
+document.getElementById("result").innerHTML = resultText;
+}</script>
+</body>
+</html>
